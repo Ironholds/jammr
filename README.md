@@ -15,8 +15,8 @@ Once loaded, you can then call `clean()` - the only exported function - which pr
 
 ## Use
 
-  devtools::install_github("ironholds/jammr")
-  library(jammr)
-  clean()
+    devtools::install_github("ironholds/jammr")
+    library(jammr)
+    clean()
 
 And then walk away giggling.
