@@ -9,7 +9,7 @@
 }
 
 #'@title clean up the sabotage
-#'@description prints a ton of newlines, a facimilie of the R welcome message, and then
+#'@description prints a ton of newlines, a facsimile of the R welcome message, and then
 #'unloads \code{jammr}.
 #'@useDynLib jammr
 #'@export

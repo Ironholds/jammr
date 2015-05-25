@@ -11,7 +11,7 @@ Step right up, useRs, for *jammr*, a package that weaponises a user's R session 
 3. Sets pi to exactly 3, and;
 4. Disables the emitting of all warning, error or diagnostic messages, which should make working out what on earth is going on *great* fun.
 
-Once loaded, you can then call `clean()` - the only exported function - which prints a ton of newlines to cover up your silliness, generates a facimilie of the R loading message, and then unloads `jammr`, allowing you to get away with it regardless of the presence of those meddling kids.
+Once loaded, you can then call `clean()` - the only exported function - which prints a ton of newlines to cover up your silliness, generates a facsimile of the R loading message, and then unloads `jammr`, allowing you to get away with it regardless of the presence of those meddling kids.
 
 ## Use
 
