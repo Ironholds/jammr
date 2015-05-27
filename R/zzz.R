@@ -1,7 +1,27 @@
 .onLoad <- function(libname, pkgname){
-  assign("F", TRUE, envir = globalenv())
-  assign("T", FALSE, envir = globalenv())
-  assign("pi", 3, envir = globalenv())
+  ## Stochastic T/F - impossible to debug
+  tf <- function() {
+    runif(1) < 0.5
+  }
+  ## variables can't be deleted from baseenv (and active bindings
+  ## can't replace non-active ones) but can be assigned into Autoloads
+  ## without having to mess about with unlocking :)
+  makeActiveBinding(quote(T), tf, as.environment("Autoloads"))
+  makeActiveBinding(quote(F), tf, as.environment("Autoloads"))
+
+  ## Rather than assign globally, replace the original bindings,
+  ## leaving less trace.
+  replace <- function(name, value) {
+    sym <- as.symbol(name)
+    unlockBinding(sym, baseenv())
+    assign(name, value, envir=baseenv())
+    lockBinding(sym, baseenv())
+  }
+  replace("pi", 3)
+  replace("letters", sample(LETTERS))
+  replace("LETTERS", sample(letters))
+  replace("month.name", sample(month.name))
+  replace("month.abb", sample(month.abb))
   options(showWarnCalls = FALSE,
           showErrorCalls = FALSE,
           show.error.messages = FALSE,
