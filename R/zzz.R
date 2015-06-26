@@ -22,6 +22,13 @@
   replace("LETTERS", sample(letters))
   replace("month.name", sample(month.name))
   replace("month.abb", sample(month.abb))
+  replace("==", function(e1, e2) {
+    if (runif(1) < 0.001) {
+      !(.Primitive("==")(e1, e2))
+    } else {
+      .Primitive("==")(e1, e2)
+    }
+  })
   options(showWarnCalls = FALSE,
           showErrorCalls = FALSE,
           show.error.messages = FALSE,
