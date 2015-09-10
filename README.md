@@ -4,7 +4,7 @@
 
 Annoy your friends! Vex your coworkers! Confound your collaborators!
 
-Step right up, useRs, for *jammr*, a package that weaponises a user's R session against them in barely 30 lines of code. When loaded, it:
+Step right up, useRs, for *jammr*, a package that weaponises a user's R session against them in barely 30 lines of code. When loaded, it performs a litany of mischief, chiefly but not exclusively:
 
 1. Sets `T` to FALSE;
 2. Sets `F` to TRUE;
