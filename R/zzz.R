@@ -17,6 +17,7 @@
     assign(name, value, envir=baseenv())
     lockBinding(sym, baseenv())
   }
+  .Machine$double.eps <- runif(1)*10^runif(1, -14,-4) # Yes....
   replace("pi", 3)
   replace("letters", sample(LETTERS))
   replace("LETTERS", sample(letters))
