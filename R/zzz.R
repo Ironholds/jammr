@@ -42,7 +42,12 @@
   options(showWarnCalls = FALSE,
           showErrorCalls = FALSE,
           show.error.messages = FALSE,
-          warn = -1)
+          warn = -1,
+          digits = 3, # Just enough to be hard to catch
+          scipen = 1, # I already love this
+          timeout = 2, # Too far?
+          width = runif(1, 60, 90)
+          )
 }
 
 #'@title clean up the sabotage
